@@ -1,0 +1,43 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  robots?: 'index, follow' | 'noindex, follow';
+}
+
+const { title, description, robots = 'index, follow' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content={robots} />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">К основному содержимому</a>
+    <header class="site-header">
+      <nav aria-label="Основная навигация">
+        <ul>
+          <li><a href="/">Главная</a></li>
+          <li><a href="/cases/">Кейсы</a></li>
+          <li><a href="/research/">Исследования</a></li>
+          <li><a href="/lab/">SEO Lab</a></li>
+          <li><a href="/about/">Обо мне</a></li>
+          <li><a href="/contact/">Контакты</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main id="main">
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <p>SEO-портфолио</p>
+    </footer>
+  </body>
+</html>
