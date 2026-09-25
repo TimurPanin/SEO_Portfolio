@@ -15,7 +15,10 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
-const { Content } = await render(entry);
+const { Content, headings } = await render(entry);
+const sections = headings.filter((heading) => heading.depth === 2);
+const statusLabel = entry.data.status === 'work-sample' ? 'Образец работы' : entry.data.status === 'case-study' ? 'Кейс с результатом' : undefined;
+const categoryLabel = entry.data.category === 'Technical SEO' ? 'Техническое SEO' : undefined;
 const homeUrl = new URL('/', Astro.site).href;
 const casesUrl = new URL('/cases/', Astro.site).href;
 const pageUrl = new URL(Astro.url.pathname, Astro.site).href;
@@ -38,7 +41,39 @@ const breadcrumbSchema = {
       <li aria-current="page">{entry.data.title}</li>
     </ol>
   </nav>
-  <h1>{entry.data.title}</h1>
-  <Content />
+  <header class="case-hero">
+    <div class="case-hero__copy">
+      <div class="case-hero__badges">
+        {categoryLabel && <span class="badge">{categoryLabel}</span>}
+        {statusLabel && <span class="badge">{statusLabel}</span>}
+      </div>
+      <h1>{entry.data.title}</h1>
+      {entry.data.summary && <p>{entry.data.summary}</p>}
+    </div>
+    <div class="case-hero__panel" aria-label="О работе">
+      <dl>
+        {statusLabel && <><dt>Формат</dt><dd>{statusLabel}</dd></>}
+        {categoryLabel && <><dt>Направление</dt><dd>{categoryLabel}</dd></>}
+        <dt>Подход</dt><dd>Факт → проверка → рекомендация</dd>
+      </dl>
+    </div>
+  </header>
+
+  <div class="case-detail">
+    <nav class="case-toc" aria-label="Содержание">
+      <p class="case-toc__title">Содержание</p>
+      <ol>
+        {sections.map((section) => <li><a href={`#${section.slug}`}>{section.text}</a></li>)}
+      </ol>
+    </nav>
+    <article class="case-article">
+      <Content />
+    </article>
+  </div>
+
+  <nav class="case-back" aria-label="Переход после кейса">
+    <a href="/cases/">← Все кейсы</a>
+    <a href="/">На главную</a>
+  </nav>
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
 </BaseLayout>
