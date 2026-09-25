@@ -1,5 +1,8 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const cases = (await getCollection('cases')).sort((a, b) => a.id.localeCompare(b.id));
 ---
 
 <BaseLayout
@@ -9,7 +12,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   <h1>Кейсы</h1>
   <p>В этом разделе будут опубликованы материалы по реальным проектам после проверки исходных данных.</p>
   <ul>
-    <li><a href="/cases/gasprofservice/">GasProfService</a></li>
-    <li><a href="/cases/talisman-online/">Talisman Online</a></li>
+    {cases.map((entry) => (
+      <li><a href={`/cases/${entry.id}/`}>{entry.data.title}</a></li>
+    ))}
   </ul>
 </BaseLayout>
