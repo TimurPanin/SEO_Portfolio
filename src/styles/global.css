@@ -722,3 +722,109 @@ nav ul {
     padding: var(--space-4);
   }
 }
+
+/* Страница списка кейсов */
+.cases-hero {
+  padding: clamp(var(--space-4), 4vw, var(--space-7));
+  border: 1px solid var(--border);
+  border-radius: var(--radius-large);
+  background: var(--surface);
+}
+
+.cases-hero h1 {
+  max-width: 24ch;
+  margin-block-end: var(--space-3);
+}
+
+.cases-hero > p:last-child {
+  max-width: 68ch;
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: clamp(1rem, 1.4vw, 1.125rem);
+}
+
+.cases-note {
+  margin-block: var(--space-4) 0;
+  color: var(--text-secondary);
+  font-size: 0.9375rem;
+}
+
+.cases-list,
+.cases-inside {
+  margin-block-start: clamp(var(--space-6), 6vw, 5rem);
+}
+
+.cases-list h2,
+.cases-inside h2 {
+  margin-block: 0 var(--space-5);
+}
+
+.cases-inside__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-3);
+}
+
+.cases-inside__grid > div {
+  min-width: 0;
+  padding: var(--space-4);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-medium);
+  background: var(--surface);
+}
+
+.cases-inside__grid h3 {
+  margin-block: 0 var(--space-2);
+  font-size: 1.125rem;
+}
+
+.cases-inside__grid p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.9375rem;
+}
+
+.cases-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-5);
+  margin-block-start: clamp(var(--space-6), 6vw, 5rem);
+  padding: clamp(var(--space-4), 4vw, var(--space-6));
+  border: 1px solid var(--border);
+  border-radius: var(--radius-large);
+  background: var(--surface-muted);
+}
+
+.cases-cta h2 {
+  margin-block: 0 var(--space-2);
+}
+
+.cases-cta p {
+  max-width: 70ch;
+  margin: 0;
+  color: var(--text-secondary);
+}
+
+.cases-cta .button {
+  flex: none;
+}
+
+@media (max-width: 63.999rem) {
+  .cases-inside__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 47.999rem) {
+  .cases-cta {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 39.999rem) {
+  .cases-inside__grid {
+    grid-template-columns: 1fr;
+  }
+}
