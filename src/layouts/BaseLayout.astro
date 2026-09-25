@@ -44,7 +44,7 @@ const navigation = [
     <a class="skip-link" href="#main">Перейти к содержанию</a>
     <header class="site-header">
       <div class="site-header__inner container">
-        <a class="site-brand" href="/" aria-label="Тимур Панин — главная">
+        <a class="site-brand" href="/" aria-label="Тимур Панин - главная">
           <span class="site-brand__name">Тимур Панин</span>
           <span class="site-brand__description">Портфолио SEO-специалиста</span>
         </a>
@@ -55,7 +55,7 @@ const navigation = [
             ))}
           </ul>
         </nav>
-        <a class="button button--primary site-header__cta" href="/contact/">Связаться</a>
+        <a class="button button--primary site-header__cta" href="/contact/">Контакты</a>
         <details class="mobile-nav">
           <summary>Меню</summary>
           <nav aria-label="Мобильная навигация">
@@ -64,7 +64,7 @@ const navigation = [
                 <li><a href={href} class:list={{ 'is-active': href === '/' ? pathname === '/' : pathname.startsWith(href) }} aria-current={pathname === href ? 'page' : undefined}>{label}</a></li>
               ))}
             </ul>
-            <a class="button button--primary" href="/contact/">Связаться</a>
+            <a class="button button--primary" href="/contact/">Контакты</a>
           </nav>
         </details>
       </div>
