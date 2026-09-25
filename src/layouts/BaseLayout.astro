@@ -14,8 +14,6 @@ const pathname = Astro.url.pathname;
 const navigation = [
   { href: '/', label: 'Главная' },
   { href: '/cases/', label: 'Кейсы' },
-  { href: '/research/', label: 'Исследования' },
-  { href: '/lab/', label: 'SEO-лаборатория' },
   { href: '/about/', label: 'Обо мне' },
   { href: '/contact/', label: 'Контакты' },
 ];
@@ -64,7 +62,6 @@ const navigation = [
                 <li><a href={href} class:list={{ 'is-active': href === '/' ? pathname === '/' : pathname.startsWith(href) }} aria-current={pathname === href ? 'page' : undefined}>{label}</a></li>
               ))}
             </ul>
-            <a class="button button--primary" href="/contact/">Контакты</a>
           </nav>
         </details>
       </div>

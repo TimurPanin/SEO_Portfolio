@@ -1091,13 +1091,22 @@ nav ul {
   .case-toc {
     position: static;
     max-height: none;
+    padding: var(--space-3);
+  }
+
+  .case-toc ol {
+    gap: 0;
+  }
+
+  .case-toc a {
+    padding-block: 0.2rem;
+    line-height: 1.35;
   }
 }
 
 @media (max-width: 39.999rem) {
   .case-hero,
-  .case-article,
-  .case-toc {
+  .case-article {
     padding: var(--space-4);
   }
 
