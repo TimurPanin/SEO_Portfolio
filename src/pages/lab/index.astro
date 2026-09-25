@@ -6,6 +6,16 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   title="SEO Lab — SEO-портфолио"
   description="SEO Lab: заметки об инструментах, проверках и автоматизации SEO-задач."
 >
-  <h1>SEO-лаборатория</h1>
-  <p>Раздел для технических заметок об инструментах и автоматизации SEO-задач.</p>
+  <div class="secondary-page">
+    <header class="secondary-hero">
+      <h1>SEO-лаборатория</h1>
+      <p>Раздел для технических заметок об инструментах и автоматизации SEO-задач.</p>
+    </header>
+
+    <section class="secondary-panel" aria-labelledby="lab-state-title">
+      <h2 id="lab-state-title">Материалы пока не опубликованы</h2>
+      <p>Проверенные инструменты и эксперименты появятся здесь после подготовки материалов. Сейчас доступны публичные SEO-аудиты.</p>
+      <a class="button button--secondary" href="/cases/">Смотреть кейсы</a>
+    </section>
+  </div>
 </BaseLayout>

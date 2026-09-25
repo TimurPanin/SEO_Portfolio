@@ -18,7 +18,28 @@ const profilePageSchema = {
   title="Обо мне — SEO-портфолио"
   description="Страница о специалисте и направлениях работы: техническое SEO, семантика, оптимизация страниц и архитектура."
 >
-  <h1>Обо мне</h1>
-  <p>Здесь будет размещена информация о направлениях работы и подходе к SEO-проектам.</p>
+  <div class="secondary-page">
+    <header class="secondary-hero">
+      <h1>Обо мне</h1>
+      <p>Здесь представлены направления работы и подход к проверке SEO-проблем на опубликованных проектах.</p>
+    </header>
+
+    <div class="secondary-grid">
+      <section class="secondary-panel" aria-labelledby="about-directions-title">
+        <h2 id="about-directions-title">Направления работы</h2>
+        <ul class="secondary-list">
+          <li>Техническое SEO</li>
+          <li>Семантические исследования</li>
+          <li>Оптимизация страниц</li>
+          <li>Архитектура сайта</li>
+        </ul>
+      </section>
+      <section class="secondary-panel" aria-labelledby="about-approach-title">
+        <h2 id="about-approach-title">Подход к аудиту</h2>
+        <p>В опубликованных работах автоматические сигналы перепроверяются по страницам, HTTP-ответам и HTML. Подтверждённые находки отделены от контрольных проверок, а рекомендации — от результатов внедрения.</p>
+        <a class="button button--secondary" href="/cases/">Посмотреть работы</a>
+      </section>
+    </div>
+  </div>
   <script type="application/ld+json" set:html={JSON.stringify(profilePageSchema)} />
 </BaseLayout>

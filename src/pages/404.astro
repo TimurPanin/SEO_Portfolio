@@ -8,6 +8,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   robots="noindex, follow"
   includeCanonical={false}
 >
-  <h1>Страница не найдена</h1>
-  <p>Запрошенной страницы нет. <a href="/">Вернуться на главную</a>.</p>
+  <div class="secondary-page secondary-page--error">
+    <section class="secondary-hero">
+      <h1>Страница не найдена</h1>
+      <p>Запрошенной страницы нет. Вернитесь на главную или откройте список опубликованных работ.</p>
+      <div class="secondary-actions">
+        <a class="button button--primary" href="/">Вернуться на главную</a>
+        <a class="button button--secondary" href="/cases/">Смотреть кейсы</a>
+      </div>
+    </section>
+  </div>
 </BaseLayout>

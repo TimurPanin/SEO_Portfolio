@@ -1114,3 +1114,99 @@ nav ul {
     padding-inline: var(--space-3);
   }
 }
+
+/* Второстепенные страницы */
+.secondary-page {
+  width: min(100%, 68rem);
+  margin-inline: auto;
+}
+
+.secondary-hero {
+  padding: clamp(var(--space-4), 4vw, var(--space-7));
+  border: 1px solid var(--border);
+  border-radius: var(--radius-large);
+  background: linear-gradient(115deg, var(--surface) 55%, #edf4ff);
+}
+
+.secondary-hero h1 {
+  max-width: 24ch;
+  margin-block-end: var(--space-3);
+}
+
+.secondary-hero > p {
+  max-width: var(--text-width);
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: clamp(1rem, 1.4vw, 1.125rem);
+}
+
+.secondary-panel {
+  margin-block-start: var(--space-5);
+  padding: clamp(var(--space-4), 3vw, var(--space-6));
+  border: 1px solid var(--border);
+  border-radius: var(--radius-large);
+  background: var(--surface);
+}
+
+.secondary-panel h2 {
+  margin-block: 0 var(--space-3);
+}
+
+.secondary-panel p {
+  max-width: var(--text-width);
+  color: var(--text-secondary);
+}
+
+.secondary-panel > :last-child {
+  margin-block-end: 0;
+}
+
+.secondary-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.secondary-grid > * {
+  min-width: 0;
+}
+
+.secondary-list {
+  margin: 0;
+  padding-inline-start: 1.5rem;
+}
+
+.secondary-list li + li {
+  margin-block-start: var(--space-2);
+}
+
+.secondary-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-block-start: var(--space-4);
+}
+
+.secondary-page--error {
+  max-width: 52rem;
+}
+
+.secondary-page--error .secondary-actions {
+  margin-block-start: var(--space-5);
+}
+
+@media (max-width: 47.999rem) {
+  .secondary-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 39.999rem) {
+  .secondary-actions {
+    flex-direction: column;
+  }
+
+  .secondary-actions .button {
+    width: 100%;
+  }
+}
