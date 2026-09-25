@@ -2,7 +2,7 @@
 title: Talisman Online
 seoTitle: Технический SEO-аудит Talisman Online — Work Sample
 description: 'Независимый технический SEO-аудит Talisman Online: sitemap, внутренние редиректы, canonical, Schema.org, on-page и редакционный QA.'
-summary: Независимый SEO-аудит с проверкой sitemap, HTTP-ответов, внутренних редиректов, canonical, structured data и on-page элементов.
+summary: Независимый SEO-аудит с проверкой sitemap, HTTP-ответов, внутренних редиректов, canonical, структурированных данных и элементов внутренней оптимизации.
 status: work-sample
 category: Technical SEO
 ---

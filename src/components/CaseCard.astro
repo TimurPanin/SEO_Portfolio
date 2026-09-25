@@ -1,0 +1,25 @@
+---
+interface Props {
+  title: string;
+  summary?: string;
+  status?: 'work-sample' | 'case-study';
+  category?: string;
+  href: string;
+}
+
+const { title, summary, status, category, href } = Astro.props;
+const statusLabel = status === 'work-sample' ? 'Образец работы' : status === 'case-study' ? 'Кейс с результатом' : undefined;
+const categoryLabel = category === 'Technical SEO' ? 'Техническое SEO' : undefined;
+---
+
+<article class="case-card card">
+  {(categoryLabel || statusLabel) && (
+    <div class="case-card__labels">
+      {categoryLabel && <span class="badge">{categoryLabel}</span>}
+      {statusLabel && <span class="badge">{statusLabel}</span>}
+    </div>
+  )}
+  <h3>{title}</h3>
+  {summary && <p>{summary}</p>}
+  <a class="case-card__link" href={href}>Смотреть кейс: {title} <span aria-hidden="true">→</span></a>
+</article>

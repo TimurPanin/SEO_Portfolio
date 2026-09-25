@@ -1,5 +1,15 @@
 ---
+import { getCollection } from 'astro:content';
+import CaseCard from '../components/CaseCard.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const caseOrder = ['gasprofservice', 'talisman-online'];
+const cases = await getCollection('cases');
+const selectedCases = caseOrder.map((id) => {
+  const entry = cases.find((candidate) => candidate.id === id);
+  if (!entry) throw new Error(`Не найден кейс для главной страницы: ${id}`);
+  return entry;
+});
 
 const pageUrl = new URL('/', Astro.site).href;
 const websiteSchema = {
@@ -11,10 +21,116 @@ const websiteSchema = {
 ---
 
 <BaseLayout
-  title="SEO-портфолио — главная"
-  description="Портфолио SEO-специалиста: техническое SEO, семантика, архитектура сайта, исследования и автоматизация."
+  title="Тимур Панин — SEO-портфолио и технические аудиты"
+  description="Портфолио SEO-специалиста Тимура Панина: технические SEO-аудиты, проверенные находки, исследования и практические рекомендации."
 >
-  <h1>SEO-портфолио</h1>
-  <p>Здесь будут представлены кейсы, исследования и подход к работе над поисковой оптимизацией.</p>
+  <section class="home-hero" aria-labelledby="home-title">
+    <div class="home-hero__copy">
+      <p class="home-eyebrow">Портфолио SEO-специалиста</p>
+      <h1 id="home-title">
+        <span>Реальные аудиты. </span>
+        <span>Проверенные находки. </span>
+        <span>Практические рекомендации.</span>
+      </h1>
+      <p class="home-hero__intro">Техническое SEO, анализ структуры сайта, оптимизация страниц и проверка данных на реальных проектах.</p>
+      <div class="home-actions">
+        <a class="button button--primary" href="/cases/">Смотреть кейсы</a>
+        <a class="button button--secondary" href="/research/">Исследования</a>
+      </div>
+    </div>
+    <div class="home-hero__visual">
+      <p class="home-hero__visual-title">От сигнала к проверенному выводу</p>
+      <div class="home-hero__visual-grid">
+        <div>
+          <p class="home-hero__visual-label">Техническая проверка</p>
+          <p>Страница, HTML и ответ сервера.</p>
+        </div>
+        <div>
+          <p class="home-hero__visual-label">Доказательства</p>
+          <p>Источник, дата и границы выборки.</p>
+        </div>
+        <div>
+          <p class="home-hero__visual-label">Рекомендация</p>
+          <p>Отдельно от статуса внедрения.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-section" aria-labelledby="directions-title">
+    <div class="home-section__heading">
+      <p class="home-eyebrow">Практика</p>
+      <h2 id="directions-title">Направления работы</h2>
+    </div>
+    <div class="feature-grid">
+      <article class="feature-card">
+        <h3>Техническое SEO</h3>
+        <p>Обход сайта, индексация, канонические URL, карта сайта, перенаправления и структурированные данные.</p>
+      </article>
+      <article class="feature-card">
+        <h3>Анализ на основе данных</h3>
+        <p>Выводы с сохранением источника, выборки, даты и методики проверки.</p>
+      </article>
+      <article class="feature-card">
+        <h3>Реальные кейсы</h3>
+        <p>Публичные образцы работ с подтверждёнными находками и ограничениями.</p>
+      </article>
+      <article class="feature-card">
+        <h3>Практические рекомендации</h3>
+        <p>Предложенные исправления отделены от факта обнаружения и не выдаются за внедрённый результат.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="home-section selected-work" aria-labelledby="selected-work-title">
+    <div class="home-section__heading">
+      <p class="home-eyebrow">Портфолио</p>
+      <h2 id="selected-work-title">Избранные работы</h2>
+      <p>Два независимых SEO-аудита с ручной перепроверкой технических проблем и оптимизации страниц.</p>
+    </div>
+    <div class="case-grid">
+      {selectedCases.map((entry) => (
+        <CaseCard
+          title={entry.data.title}
+          summary={entry.data.summary}
+          status={entry.data.status}
+          category={entry.data.category}
+          href={`/cases/${entry.id}/`}
+        />
+      ))}
+    </div>
+  </section>
+
+  <section class="home-section" aria-labelledby="process-title">
+    <div class="home-section__heading">
+      <p class="home-eyebrow">Методика</p>
+      <h2 id="process-title">Как я работаю</h2>
+    </div>
+    <ol class="process-grid">
+      <li class="process-step">
+        <span class="process-step__number" aria-hidden="true">01</span>
+        <h3>Найти сигнал</h3>
+        <p>Анализ сайта, HTML, HTTP или ручная проверка помогают найти кандидата на проблему.</p>
+      </li>
+      <li class="process-step">
+        <span class="process-step__number" aria-hidden="true">02</span>
+        <h3>Подтвердить</h3>
+        <p>Автоматический результат перепроверяется на реальной странице, в DOM или исходном HTML.</p>
+      </li>
+      <li class="process-step">
+        <span class="process-step__number" aria-hidden="true">03</span>
+        <h3>Сформулировать решение</h3>
+        <p>Факт, ограничение и рекомендация фиксируются отдельно.</p>
+      </li>
+    </ol>
+  </section>
+
+  <section class="home-final-cta" aria-labelledby="final-cta-title">
+    <div>
+      <h2 id="final-cta-title">Посмотреть технические SEO-аудиты</h2>
+      <p>В кейсах подробно показаны методика проверки, подтверждённые находки, контрольные проверки и ограничения.</p>
+    </div>
+    <a class="button button--primary" href="/cases/">Перейти к кейсам</a>
+  </section>
   <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
 </BaseLayout>

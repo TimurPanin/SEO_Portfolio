@@ -2,7 +2,7 @@
 title: GasProfService
 seoTitle: Технический SEO-аудит GasProfService — Work Sample
 description: 'Независимый технический SEO-аудит GasProfService: внутренние 404, товарные цены, H1, изображения, Product Microdata и контент товарных карточек.'
-summary: Независимый SEO-аудит с ручной проверкой технических, on-page, e-commerce и structured data проблем после первичного поиска кандидатов через crawler.
+summary: Независимый SEO-аудит с ручной проверкой технических проблем, внутренней оптимизации, электронной коммерции и структурированных данных после первичного поиска кандидатов с помощью краулера.
 status: work-sample
 category: Technical SEO
 ---
