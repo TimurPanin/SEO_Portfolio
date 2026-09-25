@@ -1,5 +1,17 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const pageUrl = new URL('/about/', Astro.site).href;
+const profilePageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfilePage',
+  url: pageUrl,
+  mainEntity: {
+    '@type': 'Person',
+    name: 'Тимур Панин',
+    url: pageUrl,
+  },
+};
 ---
 
 <BaseLayout
@@ -8,4 +20,5 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 >
   <h1>Обо мне</h1>
   <p>Здесь будет размещена информация о направлениях работы и подходе к SEO-проектам.</p>
+  <script type="application/ld+json" set:html={JSON.stringify(profilePageSchema)} />
 </BaseLayout>

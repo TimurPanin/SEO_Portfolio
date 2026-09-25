@@ -1,5 +1,13 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const pageUrl = new URL('/', Astro.site).href;
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'SEO-портфолио Тимура Панина',
+  url: pageUrl,
+};
 ---
 
 <BaseLayout
@@ -8,4 +16,5 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 >
   <h1>SEO-портфолио</h1>
   <p>Здесь будут представлены кейсы, исследования и подход к работе над поисковой оптимизацией.</p>
+  <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
 </BaseLayout>
