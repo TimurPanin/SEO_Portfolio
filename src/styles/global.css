@@ -42,6 +42,24 @@ nav ul {
   list-style: none;
 }
 
+.breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.5rem;
+  margin: 0 0 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.breadcrumbs li {
+  overflow-wrap: anywhere;
+}
+
+.breadcrumbs li + li::before {
+  content: '›';
+  margin-inline-end: 0.5rem;
+}
+
 a {
   color: #154a9a;
 }
