@@ -10,6 +10,15 @@ interface Props {
 
 const { title, description, robots = 'index, follow', includeCanonical = true } = Astro.props;
 const canonical = includeCanonical ? new URL(Astro.url.pathname, Astro.site).href : undefined;
+const pathname = Astro.url.pathname;
+const navigation = [
+  { href: '/', label: 'Главная' },
+  { href: '/cases/', label: 'Кейсы' },
+  { href: '/research/', label: 'Исследования' },
+  { href: '/lab/', label: 'SEO-лаборатория' },
+  { href: '/about/', label: 'Обо мне' },
+  { href: '/contact/', label: 'Контакты' },
+];
 ---
 
 <!doctype html>
@@ -32,24 +41,51 @@ const canonical = includeCanonical ? new URL(Astro.url.pathname, Astro.site).hre
     {canonical && <meta name="twitter:description" content={description} />}
   </head>
   <body>
-    <a class="skip-link" href="#main">К основному содержимому</a>
+    <a class="skip-link" href="#main">Перейти к содержанию</a>
     <header class="site-header">
-      <nav aria-label="Основная навигация">
-        <ul>
-          <li><a href="/">Главная</a></li>
-          <li><a href="/cases/">Кейсы</a></li>
-          <li><a href="/research/">Исследования</a></li>
-          <li><a href="/lab/">SEO Lab</a></li>
-          <li><a href="/about/">Обо мне</a></li>
-          <li><a href="/contact/">Контакты</a></li>
-        </ul>
-      </nav>
+      <div class="site-header__inner container">
+        <a class="site-brand" href="/" aria-label="Тимур Панин — главная">
+          <span class="site-brand__name">Тимур Панин</span>
+          <span class="site-brand__description">Портфолио SEO-специалиста</span>
+        </a>
+        <nav class="desktop-nav" aria-label="Основная навигация">
+          <ul>
+            {navigation.map(({ href, label }) => (
+              <li><a href={href} class:list={{ 'is-active': href === '/' ? pathname === '/' : pathname.startsWith(href) }} aria-current={pathname === href ? 'page' : undefined}>{label}</a></li>
+            ))}
+          </ul>
+        </nav>
+        <a class="button button--primary site-header__cta" href="/contact/">Связаться</a>
+        <details class="mobile-nav">
+          <summary>Меню</summary>
+          <nav aria-label="Мобильная навигация">
+            <ul>
+              {navigation.map(({ href, label }) => (
+                <li><a href={href} class:list={{ 'is-active': href === '/' ? pathname === '/' : pathname.startsWith(href) }} aria-current={pathname === href ? 'page' : undefined}>{label}</a></li>
+              ))}
+            </ul>
+            <a class="button button--primary" href="/contact/">Связаться</a>
+          </nav>
+        </details>
+      </div>
     </header>
-    <main id="main">
+    <main id="main" class="container">
       <slot />
     </main>
     <footer class="site-footer">
-      <p>SEO-портфолио</p>
+      <div class="site-footer__inner container">
+        <div>
+          <p class="site-footer__name">Тимур Панин</p>
+          <p class="site-footer__description">Портфолио SEO-специалиста</p>
+        </div>
+        <nav aria-label="Навигация в подвале">
+          <ul>
+            {navigation.filter(({ href }) => href !== '/').map(({ href, label }) => (
+              <li><a href={href}>{label}</a></li>
+            ))}
+          </ul>
+        </nav>
+      </div>
     </footer>
   </body>
 </html>
