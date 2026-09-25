@@ -7,13 +7,15 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "seo:check": "node scripts/seo-check.mjs"
+    "seo:check": "node scripts/seo-check.mjs",
+    "seo:links": "node scripts/seo-links-check.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",
     "astro": "7.3.5"
   },
   "devDependencies": {
+    "fast-xml-parser": "^5.11.1",
     "parse5": "^8.0.1"
   }
 }
