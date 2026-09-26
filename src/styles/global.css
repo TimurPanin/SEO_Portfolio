@@ -453,13 +453,10 @@ nav ul {
 }
 
 .home-hero h1 {
-  max-width: 20ch;
+  max-width: 22ch;
   margin-block-end: var(--space-4);
-  font-size: clamp(2.1rem, 4vw, 3.5rem);
-}
-
-.home-hero h1 span {
-  display: block;
+  font-size: clamp(2rem, 3.6vw, 3.25rem);
+  text-wrap: balance;
 }
 
 .home-hero__intro {
@@ -584,6 +581,43 @@ nav ul {
   padding: var(--space-5);
 }
 
+.cases-list .case-grid,
+.selected-work .case-grid {
+  grid-auto-rows: 1fr;
+}
+
+.case-card--image {
+  min-height: 21rem;
+  border-color: rgba(255, 255, 255, 0.2);
+  background-color: #172235;
+  background-image: linear-gradient(105deg, rgba(9, 20, 38, 0.94), rgba(9, 20, 38, 0.82) 60%, rgba(9, 20, 38, 0.66)), var(--case-card-image);
+  background-position: center, center top;
+  background-size: cover;
+  color: #fff;
+}
+
+.selected-work .case-card--image {
+  background-image: linear-gradient(105deg, rgba(9, 20, 38, 0.9), rgba(9, 20, 38, 0.76) 60%, rgba(9, 20, 38, 0.58)), var(--case-card-image);
+}
+
+.case-card--image h3 {
+  margin-block-start: auto;
+}
+
+.case-card--image .case-card__link {
+  padding: 0.5rem var(--space-2);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: var(--radius-small);
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+  text-decoration: none;
+}
+
+.case-card--image .case-card__link:hover,
+.case-card--image .case-card__link:focus-visible {
+  background: rgba(255, 255, 255, 0.28);
+}
+
 .case-card__labels {
   display: flex;
   flex-wrap: wrap;
@@ -601,9 +635,19 @@ nav ul {
   color: var(--text-secondary);
 }
 
-.case-card__link {
-  align-self: flex-start;
+.case-card--image p {
+  max-width: 42ch;
+  color: rgba(255, 255, 255, 0.94);
+}
+
+.case-card__actions {
+  display: grid;
+  justify-items: start;
+  gap: var(--space-2);
   margin-block-start: auto;
+}
+
+.case-card__link {
   font-weight: 700;
 }
 
@@ -839,7 +883,11 @@ nav ul {
   padding: clamp(var(--space-4), 4vw, var(--space-7));
   border: 1px solid var(--border);
   border-radius: var(--radius-large);
-  background: linear-gradient(115deg, var(--surface) 55%, #edf4ff);
+  background-color: #172235;
+  background-image: linear-gradient(100deg, rgba(9, 20, 38, 0.95), rgba(9, 20, 38, 0.84) 58%, rgba(9, 20, 38, 0.52)), var(--case-hero-image);
+  background-position: center, center top;
+  background-size: cover;
+  color: #fff;
 }
 
 .case-hero__copy,
@@ -861,7 +909,7 @@ nav ul {
 .case-hero__copy > p {
   max-width: 68ch;
   margin: 0;
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.94);
   font-size: clamp(1rem, 1.4vw, 1.125rem);
 }
 
@@ -869,7 +917,8 @@ nav ul {
   padding: var(--space-4);
   border: 1px solid var(--border);
   border-radius: var(--radius-medium);
-  background: var(--surface);
+  background: rgba(255, 255, 255, 0.94);
+  color: var(--text-primary);
 }
 
 .case-hero__panel dl {
@@ -936,6 +985,12 @@ nav ul {
 .case-toc a:focus-visible {
   color: var(--accent-hover);
   background: var(--surface-muted);
+}
+
+.case-toc a[aria-current="location"] {
+  color: var(--accent-hover);
+  background: var(--surface-muted);
+  font-weight: 700;
 }
 
 .case-article {
@@ -1005,11 +1060,30 @@ nav ul {
   background: #f5f8ff;
 }
 
-.case-article h3 + p:has(+ :is(h2, h3)),
-.case-article h3 + p + p:has(+ :is(h2, h3)) {
+.case-article h3 + p:has(+ :is(h2, h3, .case-evidence)),
+.case-article h3 + p + p:has(+ :is(h2, h3, .case-evidence)) {
   padding-block-end: var(--space-4);
   border-bottom: 1px solid var(--border);
   border-radius: 0 0 var(--radius-medium) var(--radius-medium);
+}
+
+.case-article .case-evidence {
+  margin: var(--space-4) 0 var(--space-5);
+}
+
+.case-evidence img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-medium);
+}
+
+.case-evidence figcaption {
+  margin-block-start: var(--space-2);
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  line-height: 1.5;
 }
 
 .case-article h2[id="что-дополнительно-проверялось"] ~ h3 {
@@ -1082,6 +1156,10 @@ nav ul {
   .case-hero,
   .case-detail {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  .case-hero {
+    background-image: linear-gradient(90deg, rgba(9, 20, 38, 0.94), rgba(9, 20, 38, 0.83) 65%, rgba(9, 20, 38, 0.72)), var(--case-hero-image);
   }
 
   .case-hero__panel {

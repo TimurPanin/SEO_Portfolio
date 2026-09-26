@@ -48,12 +48,12 @@ const navigation = [
         </a>
         <nav class="desktop-nav" aria-label="Основная навигация">
           <ul>
-            {navigation.map(({ href, label }) => (
+            {navigation.filter(({ href }) => href !== '/contact/').map(({ href, label }) => (
               <li><a href={href} class:list={{ 'is-active': href === '/' ? pathname === '/' : pathname.startsWith(href) }} aria-current={pathname === href ? 'page' : undefined}>{label}</a></li>
             ))}
           </ul>
         </nav>
-        <a class="button button--primary site-header__cta" href="/contact/">Контакты</a>
+        <a class="button button--primary site-header__cta" href="/contact/" aria-current={pathname === '/contact/' ? 'page' : undefined}>Контакты</a>
         <details class="mobile-nav">
           <summary>Меню</summary>
           <nav aria-label="Мобильная навигация">

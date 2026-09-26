@@ -19,6 +19,11 @@ const { Content, headings } = await render(entry);
 const sections = headings.filter((heading) => heading.depth === 2);
 const statusLabel = entry.data.status === 'work-sample' ? 'Образец работы' : entry.data.status === 'case-study' ? 'Кейс с результатом' : undefined;
 const categoryLabel = entry.data.category === 'Technical SEO' ? 'Техническое SEO' : undefined;
+const screenshots: Record<string, string> = {
+  gasprofservice: '/images/cases/gasprofservice-home.webp',
+  'talisman-online': '/images/cases/talisman-online-home.webp',
+};
+const screenshot = screenshots[entry.id];
 const homeUrl = new URL('/', Astro.site).href;
 const casesUrl = new URL('/cases/', Astro.site).href;
 const pageUrl = new URL(Astro.url.pathname, Astro.site).href;
@@ -26,9 +31,9 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Главная', item: homeUrl },
-    { '@type': 'ListItem', position: 2, name: 'Кейсы', item: casesUrl },
-    { '@type': 'ListItem', position: 3, name: entry.data.title, item: pageUrl },
+    { '@type': 'ListItem', position: 1, name: 'Главная', item: homeUrl, url: homeUrl },
+    { '@type': 'ListItem', position: 2, name: 'Кейсы', item: casesUrl, url: casesUrl },
+    { '@type': 'ListItem', position: 3, name: entry.data.title, item: pageUrl, url: pageUrl },
   ],
 };
 ---
@@ -41,7 +46,7 @@ const breadcrumbSchema = {
       <li aria-current="page">{entry.data.title}</li>
     </ol>
   </nav>
-  <header class="case-hero">
+  <header class="case-hero" style={screenshot && `--case-hero-image: url("${screenshot}")`}>
     <div class="case-hero__copy">
       <div class="case-hero__badges">
         {categoryLabel && <span class="badge">{categoryLabel}</span>}
@@ -76,4 +81,35 @@ const breadcrumbSchema = {
     <a href="/">На главную</a>
   </nav>
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script>
+    const links = Array.from(document.querySelectorAll<HTMLAnchorElement>('.case-toc a[href^="#"]'));
+    const sections = links.flatMap((link) => {
+      const heading = document.getElementById(decodeURIComponent(link.hash.slice(1)));
+      return heading ? [{ link, heading }] : [];
+    });
+
+    if (sections.length) {
+      const updateActive = () => {
+        const activationLine = window.innerHeight * 0.25;
+        let active = sections[0].link;
+
+        for (const { link, heading } of sections) {
+          if (heading.getBoundingClientRect().top <= activationLine) active = link;
+        }
+
+        if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2) {
+          active = sections[sections.length - 1].link;
+        }
+
+        for (const { link } of sections) {
+          if (link === active) link.setAttribute('aria-current', 'location');
+          else link.removeAttribute('aria-current');
+        }
+      };
+
+      window.addEventListener('scroll', updateActive, { passive: true });
+      window.addEventListener('resize', updateActive);
+      updateActive();
+    }
+  </script>
 </BaseLayout>
