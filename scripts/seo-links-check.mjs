@@ -4,7 +4,7 @@ import { parse } from 'parse5';
 import { XMLParser, XMLValidator } from 'fast-xml-parser';
 
 const dist = path.resolve('dist');
-const site = 'https://timurpanin.github.io';
+const site = 'https://timurpanin.ru';
 const hostname = new URL(site).hostname;
 const issues = [];
 const routes = new Map();

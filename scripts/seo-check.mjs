@@ -3,7 +3,7 @@ import path from 'node:path';
 import { parse } from 'parse5';
 
 const dist = path.resolve('dist');
-const site = 'https://timurpanin.github.io';
+const site = 'https://timurpanin.ru';
 const problems = [];
 const counts = { html: 0, indexable: 0, noindex: 0, jsonLd: 0 };
 const uniqueValues = {
@@ -141,7 +141,7 @@ async function checkFile(file) {
     if (canonicalNode) {
       try {
         const url = new URL(canonical);
-        if (url.protocol !== 'https:' || url.hostname !== 'timurpanin.github.io') {
+        if (url.protocol !== 'https:' || url.hostname !== 'timurpanin.ru') {
           report(label, 'canonical HTTPS and hostname', canonical);
         }
         if (url.search || url.hash) report(label, 'canonical without query or fragment', canonical);
