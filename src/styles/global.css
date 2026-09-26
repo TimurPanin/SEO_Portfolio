@@ -586,6 +586,10 @@ nav ul {
   grid-auto-rows: 1fr;
 }
 
+.case-grid > .case-card:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
+
 .case-card--image {
   min-height: 21rem;
   border-color: rgba(255, 255, 255, 0.2);

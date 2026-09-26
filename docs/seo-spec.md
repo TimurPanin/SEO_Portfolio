@@ -15,6 +15,7 @@
 /cases/
 /cases/gasprofservice/
 /cases/talisman-online/
+/cases/reestr-719/
 /research/
 /lab/
 /about/
