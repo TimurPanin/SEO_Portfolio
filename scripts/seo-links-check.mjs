@@ -9,6 +9,7 @@ const hostname = new URL(site).hostname;
 const issues = [];
 const routes = new Map();
 const sitemapUrls = new Map();
+const nonPageHtmlFiles = new Set(['google90569779fabbd696.html']);
 let internalLinks = 0;
 let sitemapFiles = 0;
 
@@ -245,7 +246,9 @@ async function checkRobots(indexFile) {
 
 try {
   const allFiles = await filesWithin(dist);
-  const htmlFiles = allFiles.filter((file) => file.endsWith('.html'));
+  const htmlFiles = allFiles.filter((file) =>
+    file.endsWith('.html') && !nonPageHtmlFiles.has(path.relative(dist, file).split(path.sep).join('/')),
+  );
   if (htmlFiles.length === 0) report('dist/', 'html-files', 0);
   for (const file of htmlFiles) {
     const route = routeFor(file);
