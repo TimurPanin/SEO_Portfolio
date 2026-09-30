@@ -11,13 +11,14 @@ const uniqueValues = {
   description: new Map(),
   canonical: new Map(),
 };
+const nonPageHtmlFiles = new Set(['google90569779fabbd696.html']);
 
 async function htmlFiles(directory) {
   const files = [];
   for (const entry of await readdir(directory, { withFileTypes: true })) {
     const fullPath = path.join(directory, entry.name);
     if (entry.isDirectory()) files.push(...await htmlFiles(fullPath));
-    else if (entry.isFile() && entry.name.endsWith('.html')) files.push(fullPath);
+    else if (entry.isFile() && entry.name.endsWith('.html') && !nonPageHtmlFiles.has(path.relative(dist, fullPath).split(path.sep).join('/'))) files.push(fullPath);
   }
   return files.sort();
 }
