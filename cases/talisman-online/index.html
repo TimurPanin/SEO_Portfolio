@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preload" href="../../fonts/golos-text-cyrillic-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../../fonts/golos-text-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="icon" href="../../favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+    <title>Технический SEO-аудит Talisman Online - Образец работы</title>
+    <meta name="description" content="Технический SEO-аудит Talisman Online: карта сайта, внутренние редиректы, canonical, Schema.org, внутренняя оптимизация и редакционная проверка.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://timurpanin.ru/cases/talisman-online/">
+    <meta property="og:title" content="Технический SEO-аудит Talisman Online - Образец работы">
+    <meta property="og:description" content="Технический SEO-аудит Talisman Online: карта сайта, внутренние редиректы, canonical, Schema.org, внутренняя оптимизация и редакционная проверка.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://timurpanin.ru/cases/talisman-online/">
+    <meta property="og:site_name" content="SEO-портфолио Тимура Панина">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:image" content="https://timurpanin.ru/images/og/talisman-online.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://timurpanin.ru/images/og/talisman-online.jpg">
+    <meta name="twitter:title" content="Технический SEO-аудит Talisman Online - Образец работы">
+    <meta name="twitter:description" content="Технический SEO-аудит Talisman Online: карта сайта, внутренние редиректы, canonical, Schema.org, внутренняя оптимизация и редакционная проверка.">
+    <link rel="stylesheet" href="../../css/style.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Перейти к содержанию</a>
+    <header class="site-header">
+      <div class="site-header__inner container">
+        <a class="site-brand" href="../../index.html">
+          <span class="site-brand__name">Тимур Панин</span>
+          <span class="site-brand__description">Портфолио SEO-специалиста</span>
+        </a>
+        <nav class="desktop-nav" aria-label="Основная навигация">
+          <ul>
+            <li><a href="../../index.html">Главная</a></li><li><a href="../../cases/index.html" class="is-active">Кейсы</a></li><li><a href="../../about/index.html">Обо мне</a></li>
+          </ul>
+        </nav>
+        <a class="button button--primary site-header__cta" href="../../contact/index.html">Контакты</a>
+        <details class="mobile-nav">
+          <summary>Меню</summary>
+          <nav aria-label="Мобильная навигация">
+            <ul>
+              <li><a href="../../index.html">Главная</a></li><li><a href="../../cases/index.html" class="is-active">Кейсы</a></li><li><a href="../../about/index.html">Обо мне</a></li><li><a href="../../contact/index.html">Контакты</a></li>
+            </ul>
+          </nav>
+        </details>
+      </div>
+    </header>
+    <main id="main" class="container">
+      
+  <nav class="breadcrumbs" aria-label="Хлебные крошки">
+    <ol>
+      <li><a href="../../index.html">Главная</a></li>
+      <li><a href="../../cases/index.html">Кейсы</a></li>
+      <li aria-current="page">Talisman Online</li>
+    </ol>
+  </nav>
+  <header class="case-hero" style="--case-hero-image: url(&quot;../images/cases/talisman-online-home.webp&quot;)">
+    <div class="case-hero__copy">
+      <div class="case-hero__badges">
+        <span class="badge">Техническое SEO</span>
+        <span class="badge">Образец работы</span>
+      </div>
+      <h1>Talisman Online</h1>
+      <p>Независимый SEO-аудит с проверкой карты сайта, HTTP-ответов, внутренних редиректов, канонических URL, структурированных данных и элементов внутренней оптимизации.</p>
+    </div>
+    <div class="case-hero__panel" aria-label="О работе">
+      <dl>
+          <dt>Сайт</dt><dd><a href="https://www.talisman-online.ru/" target="_blank" rel="noopener noreferrer">www.talisman-online.ru</a></dd>
+          <dt>Тип сайта</dt><dd>Образовательный сайт · Tilda</dd>
+          <dt>Дата проверки</dt><dd>22.09.2026</dd>
+          <dt>Объём</dt><dd>6 находок · 3 контрольные проверки · 2 скриншота</dd>
+          <dt>Инструменты</dt><dd>PowerShell, curl</dd>
+        </dl>
+    </div>
+  </header>
+
+  <section class="case-summary" aria-labelledby="case-summary-title">
+      <p class="case-summary__eyebrow" id="case-summary-title">Коротко</p>
+      <p class="case-summary__verdict">Canonical не было на 81 из 84 страниц, а хлебные крошки детских курсов вели в раздел для взрослых</p>
+      <ol class="case-summary__list">
+        <li>
+            <a href="#1-карта-сайта-содержала-дубли-и-url-с-ответом-отличным-от-http-200">
+              <span class="case-priority case-priority--high">High</span>
+              <span class="case-summary__text">Карта сайта содержала дубли и URL с ответом, отличным от HTTP 200</span>
+              <span class="case-summary__scale">4 URL не 200 из 88</span>
+            </a>
+          </li><li>
+            <a href="#2-внутренние-ссылки-вели-через-редиректы">
+              <span class="case-priority case-priority--medium">Medium</span>
+              <span class="case-summary__text">Внутренние ссылки вели через редиректы</span>
+              <span class="case-summary__scale">481 вхождение, 39 URL</span>
+            </a>
+          </li><li>
+            <a href="#3-тег-canonical-отсутствовал-на-большинстве-проверенных-страниц-с-конечным-http-200">
+              <span class="case-priority case-priority--medium">Medium</span>
+              <span class="case-summary__text">Тег canonical отсутствовал на большинстве проверенных страниц с конечным HTTP 200</span>
+              <span class="case-summary__scale">81 из 84 страниц</span>
+            </a>
+          </li><li>
+            <a href="#4-структурированные-данные-содержали-несогласованности">
+              <span class="case-priority case-priority--medium">Medium</span>
+              <span class="case-summary__text">Структурированные данные содержали несогласованности</span>
+              <span class="case-summary__scale">29 и 54 страницы</span>
+            </a>
+          </li><li>
+            <a href="#6-редакционная-проверка-качества-выявила-подтверждённые-ошибки">
+              <span class="case-priority case-priority--low">Low</span>
+              <span class="case-summary__text">Редакционная проверка качества выявила подтверждённые ошибки</span>
+              <span class="case-summary__scale">4 примера</span>
+            </a>
+          </li>
+      </ol>
+    </section><div class="case-detail">
+    <nav class="case-toc" aria-label="Содержание">
+      <p class="case-toc__title">Содержание</p>
+      <ol>
+        <li><a href="#задача">Задача</a></li><li><a href="#методика">Методика</a></li><li><a href="#что-проверялось">Что проверялось</a></li><li><a href="#ключевые-находки">Ключевые находки</a></li><li><a href="#что-дополнительно-проверялось">Что дополнительно проверялось</a></li><li><a href="#приоритеты">Приоритеты</a></li><li><a href="#рекомендации">Рекомендации</a></li><li><a href="#ограничения">Ограничения</a></li><li><a href="#статус-работы">Статус работы</a></li>
+      </ol>
+    </nav>
+    <article class="case-article">
+      <p>Это независимый SEO-аудит в формате образца работы по публичной версии <a href="https://www.talisman-online.ru/" target="_blank" rel="noopener noreferrer">Talisman Online</a>, выполненный 22.09.2026. Автоматические результаты уточнялись по конечным HTTP-ответам, HTML и выборочным проверкам действующих страниц. Ниже приведены наблюдения на дату аудита и рекомендации. Подтверждений внедрения и измерений после него нет.</p>
+<h2 id="задача">Задача</h2>
+<p>Проверить техническое состояние и внутреннюю оптимизацию публичной части сайта, найти подтверждённые проблемы и отделить их от ложных срабатываний, неоднозначных сигналов и вопросов, требующих дополнительной проверки. Клиентский бриф или целевые бизнес-показатели для этой работы не заявляются.</p>
+<h2 id="методика">Методика</h2>
+<p>Проверялись записи карты сайта, конечные коды HTTP-ответов, цепочки редиректов и внутренние ссылки. Для загруженных страниц анализировались заголовки страниц, метаописания, H1, теги canonical, Schema.org / JSON-LD и текстовый контент. Отдельные выводы сверялись вручную с действующими страницами, видимым интерфейсом и исходным HTML. Автоматический сигнал сам по себе не считался доказанной SEO-ошибкой: сначала уточнялись конечный URL, контекст элемента и границы проверки.</p>
+<h2 id="что-проверялось">Что проверялось</h2>
+<p>В проверенной карте сайта было <strong>93 записи</strong> для <strong>88 уникальных URL</strong>. Конечный HTTP 200 получили <strong>84 из этих 88 URL</strong>. Из HTML проверенных страниц карты сайта извлечено и рассмотрено <strong>4 940 внутренних ссылочных вхождений</strong>; это не 4 940 уникальных адресов и не полный граф сайта. Наличие JSON-LD проверялось в рамках тех же <strong>88 уникальных URL</strong>. Все числа ниже относятся к проверке 22.09.2026, а не к текущему состоянию сайта.</p>
+<figure class="case-evidence">
+  <img src="../../images/cases/evidence/talisman-audit-summary.webp" alt="Сводка отчёта технического аудита Talisman Online от 22 сентября 2026 года" width="1045" height="490" loading="lazy" decoding="async" />
+  <figcaption>Сводка отчёта аудита от 22.09.2026.</figcaption>
+</figure>
+<h2 id="ключевые-находки">Ключевые находки</h2>
+<h3 id="1-карта-сайта-содержала-дубли-и-url-с-ответом-отличным-от-http-200">1. Карта сайта содержала дубли и URL с ответом, отличным от HTTP 200</h3>
+<p>Из 93 записей карты сайта только 88 были уникальными: пять URL встретились по два раза. Среди 88 уникальных адресов после перехода к конечной странице 84 ответили HTTP 200, три - HTTP 404, один - HTTP 500. В частности, <code>/404</code>, <code>/adults</code> и <code>/kids</code> вели к 404, а <code>/adults/master-classes</code> - к 500. При этом <strong>25 URL из карты сайта</strong> проходили через редирект до финального адреса. Это отдельный показатель, не число внутренних ссылок через редиректы.</p>
+<p>Карта сайта тем самым включала повторы, неработающие назначения и нефинальные URL. Рекомендация - оставлять в ней канонические индексируемые адреса с прямым ответом 200: убрать неактуальные страницы, восстановить нужные и исправить ответ 500, затем повторно проверить карту сайта. Причина серверной ошибки 500 и дальнейшая судьба этих адресов в аудите не установлены. Нельзя считать ошибочными все 93 записи.</p>
+<h3 id="2-внутренние-ссылки-вели-через-редиректы">2. Внутренние ссылки вели через редиректы</h3>
+<p>В ходе обхода рассмотрено 4 940 внутренних ссылочных вхождений. Из них <strong>481 вхождение</strong> вело через редирект, но относилось к <strong>39 уникальным исходным URL-источникам редиректов</strong>. Встречались цепочки от двух до пяти переходов; для <code>/kids/podgotovka-k-ege</code> в аудите отмечено пять переходов до конечной страницы курса. На части адресов наблюдался переход вида HTTPS без завершающей косой черты → HTTP с косой чертой → HTTPS с косой чертой. Он не приписывается всем 39 URL.</p>
+<p>Такую перелинковку стоит исправлять на уровне источника ссылок: href должен сразу указывать на конечный HTTPS URL с согласованными именем хоста и завершающей косой чертой. Это избавляет переход от лишних запросов и упрощает обход. <strong>481</strong> - число вхождений в проверенных страницах, <strong>39</strong> - число уникальных исходных URL; ни одно из них не описывает весь ссылочный граф сайта. Отдельные <strong>25</strong> редиректящих URL из карты сайта относятся к другой совокупности.</p>
+<h3 id="3-тег-canonical-отсутствовал-на-большинстве-проверенных-страниц-с-конечным-http-200">3. Тег canonical отсутствовал на большинстве проверенных страниц с конечным HTTP 200</h3>
+<p>Тег canonical отсутствовал <strong>в исходном HTML на 81 из 84 проверенных страниц с финальным HTTP 200</strong>. Он был найден только на трёх страницах этой совокупности. Четыре URL с конечными 404 или 500 в знаменатель 84 не включались.</p>
+<p>Для индексируемых страниц рекомендация - определить финальный основной URL и последовательно выводить один соответствующий тег canonical. Такой подход особенно полезен, когда у адреса есть варианты или редиректы. Проверка установила отсутствие тега именно в полученном исходном HTML; она не исключала отдельно HTTP-заголовок Link или добавление после выполнения JavaScript. Вывод не означает, что тег canonical отсутствует на каждом URL сайта, и не устанавливает фактический статус индексации.</p>
+<figure class="case-evidence">
+  <img src="../../images/cases/evidence/talisman-http-canonical.webp" alt="Фрагмент таблицы аудита Talisman Online с кодами HTTP и отметками в колонке Canonical" width="1090" height="655" loading="lazy" decoding="async" />
+  <figcaption>Фрагмент таблицы аудита: коды HTTP и отметки Canonical.</figcaption>
+</figure>
+<h3 id="4-структурированные-данные-содержали-несогласованности">4. Структурированные данные содержали несогласованности</h3>
+<p>JSON-LD был обнаружен на <strong>55 из 88</strong> проверенных URL из карты сайта. Само наличие или отсутствие JSON-LD не является ошибкой. Подтверждённые проблемы касались значений в существующей разметке. На 54 страницах BreadcrumbList использовал HTTP-адреса вместо конечных HTTPS URL. На 54 страницах объект Product указывал имя хоста без <code>www</code>, которое при проверке действующей страницы редиректило на <code>www</code> HTTPS.</p>
+<p>Содержательно наиболее показателен другой пример: на <strong>29 детских страницах курсов</strong> второй элемент BreadcrumbList вёл через <code>/adults/</code>, тогда как видимые хлебные крошки шли через <code>/kids/</code>. На странице <code>/prices/</code> ItemList содержал HTTP URL; <strong>20 уникальных целей</strong> были проверены на действующих страницах и переходили на HTTPS 200. Эти числа описывают разные группы страниц и объектов разметки, а не количество независимых причин. Рекомендация - исправить генераторы BreadcrumbList, Product и ItemList так, чтобы навигация совпадала с видимой страницей, а URL вели прямо на конечные адреса. Отсутствие иных возможных типов Schema.org автоматически не считается дефектом.</p>
+<h3 id="5-на-gift-отсутствовали-важные-элементы-внутренней-оптимизации">5. На /gift отсутствовали важные элементы внутренней оптимизации</h3>
+<p>Проверенная страница <code>/gift</code> получила конечный HTTP 200 и имела заголовок страницы, но в исходном HTML не нашлись метаописание, H1 и тег canonical. Это точечный пример <strong>внутренней оптимизации и метаданных</strong>, а не находка об отсутствующих свойствах Schema.org: источник не подтверждает таких свойств для этой страницы.</p>
+<p>Рекомендация - добавить содержательное метаописание и H1 и определить канонический URL по финальному адресу, после чего повторно проверить ответ и HTML. Отсутствие тега canonical здесь согласуется с более широкой проверенной выборкой выше, но само наблюдение по <code>/gift</code> не переносится на все посадочные страницы. Данных для утверждения, что страница действительно «сиротская», также недостаточно.</p>
+<h3 id="6-редакционная-проверка-качества-выявила-подтверждённые-ошибки">6. Редакционная проверка качества выявила подтверждённые ошибки</h3>
+<p>Автоматический поиск текстовых кандидатов дополнялся проверкой действующих страниц и метатегов. В метаописании главной обнаружено «французкого» вместо «французского». Среди других подтверждённых примеров - «Заняти проходят» вместо «Занятия проходят» в метаописании, «Курс егэ» вместо «Курс ЕГЭ» в заголовке страницы и «предложеный» вместо «предложенный» в видимом редакционном тексте проверенных детских страниц.</p>
+<p>Эти примеры показывают, почему текст и метаданные нужно проверять в контексте, а повторяющиеся ошибки исправлять в их источнике. Они не образуют заявленного здесь общего числа ошибок: агрегат рабочего документа требует отдельной сверки. Тексты пользовательских отзывов отделялись от редакционного контента. Кандидат «отввечает» был снят после проверки, поскольку на текущей для аудита видимой странице отображалось корректное «отвечает»; его нельзя предъявлять как подтверждённую ошибку.</p>
+<h2 id="что-дополнительно-проверялось">Что дополнительно проверялось</h2>
+<p>Контрольные проверки показывают, почему не каждый результат краулера стал самостоятельной находкой.</p>
+<h3 id="http-0-из-краулера">HTTP 0 из краулера</h3>
+<p>Ранний PowerShell-сканер записал HTTP 0 для <code>/404</code> и <code>/adults</code>, поскольку не смог получить ответ и HTML. Повторная проверка через <code>curl.exe</code> с переходом по редиректам установила конечный HTTP 404 для обоих URL. Случайный несуществующий адрес тоже возвращал настоящий 404. Значение HTTP 0 было сбоем сбора данных, а не отдельной подтверждённой проблемой сайта. Метаданные из тех неудачных строк не использовались.</p>
+<h3 id="скрытая-строка-test">Скрытая строка <code>test</code></h3>
+<p>При разборе исходного HTML строка <code>test</code> выглядела повторяющейся текстовой ошибкой. Финальная проверка нашла её в <code>.footer__search--results</code> с вычисленным значением <code>display: none</code>; она отсутствовала в видимом тексте <code>document.body.innerText</code> и дереве доступности. Поэтому сигнал не стал находкой о видимом пользователям контенте. Его возможное влияние на индексацию эта проверка не устанавливает.</p>
+<h3 id="метаданные-после-редиректов">Метаданные после редиректов</h3>
+<p>Первичный прогон нашёл группы одинаковых заголовков страниц, метаописаний и H1 среди исходных URL из карты сайта. Сравнение с конечными адресами показало, что часть исходных URL ведёт на одну и ту же страницу. Поэтому совпадения нельзя автоматически объявлять независимыми дублями контента. Исходный отчёт не связывает каждую группу с точной парой URL; отсутствие любых настоящих дублей также не доказано. Для отдельного вывода нужна дедупликация по финальному URL.</p>
+<h2 id="приоритеты">Приоритеты</h2>
+<div class="case-priorities">
+  <section class="case-priorities__group case-priorities__group--high">
+    <p class="case-priorities__head"><span class="case-priority case-priority--high">High</span> Ошибка сервера в карте сайта</p>
+    <ul>
+      <li>Страница с ответом HTTP 500 в sitemap</li>
+    </ul>
+  </section>
+  <section class="case-priorities__group case-priorities__group--medium">
+    <p class="case-priorities__head"><span class="case-priority case-priority--medium">Medium</span> Сигналы для обхода и индексации</p>
+    <ul>
+      <li>Дубли и URL не 200 в карте сайта</li>
+      <li>Внутренние ссылки через редиректы</li>
+      <li>Нет canonical на 81 из 84 страниц</li>
+      <li>Несогласованная разметка, прежде всего хлебные крошки детских курсов</li>
+    </ul>
+  </section>
+  <section class="case-priorities__group case-priorities__group--low">
+    <p class="case-priorities__head"><span class="case-priority case-priority--low">Low</span> Редакционные правки</p>
+    <ul>
+      <li>Опечатки в текстах и метаданных</li>
+    </ul>
+  </section>
+</div>
+<p class="case-note">Для страницы /gift приоритет в аудите не назначался. Это группировка исправлений внутри аудита, а не прогноз бизнес-эффекта.</p>
+<h2 id="рекомендации">Рекомендации</h2>
+<ol class="case-steps">
+  <li><strong>Очистить карту сайта.</strong> Убрать повторы и URL с конечными 404/500, заменить редиректящие адреса финальными индексируемыми URL.</li>
+  <li><strong>Обновить внутренние ссылки.</strong> Каждый href должен сразу вести на конечный HTTPS-адрес.</li>
+  <li><strong>Вывести canonical.</strong> Добавить корректный тег на индексируемые финальные страницы и проверить результат в HTML.</li>
+  <li><strong>Согласовать разметку.</strong> Привести BreadcrumbList, Product и ItemList к фактическим URL и видимой навигации.</li>
+  <li><strong>Доработать /gift.</strong> Добавить метаописание, H1 и тег canonical.</li>
+  <li><strong>Исправить редакционные ошибки.</strong> Поправить подтверждённые опечатки в тексте и метаданных.</li>
+</ol>
+<p class="case-note">Это рекомендации по результатам аудита, а не перечень внедрённых изменений.</p>
+<h2 id="ограничения">Ограничения</h2>
+<p>Аудит отражает публичную версию сайта на <strong>22.09.2026</strong>; доступа к CMS, админке и серверу не было. Обход карты сайта и внутренних ссылок из проверенных страниц не равен обследованию каждого URL и всего ссылочного графа. Отдельные вопросы - назначение <code>/franchise</code>, кандидаты на сиротские страницы, пустые href, региональные URL, трактовка <code>lastmod</code> и общий агрегат редакционных ошибок - оставлены для перепроверки и не представлены как подтверждённые проблемы. Полученный HTML не описывает возможные изменения после клиентского взаимодействия. Наблюдения не следует автоматически переносить на будущую версию сайта.</p>
+<h2 id="статус-работы">Статус работы</h2>
+<p>Статус: <strong>Образец работы</strong>. Аудит и рекомендации подготовлены. Подтверждения внедрения рекомендаций и измерения после внедрения отсутствуют. Поэтому здесь нет заявлений о росте трафика, позиций, заявок, продаж, конверсий или иного измеренного эффекта этой работы.</p>
+
+    </article>
+  </div>
+
+  <nav class="case-pager" aria-label="Другие кейсы">
+    <a class="case-pager__link case-pager__link--prev" href="../../cases/gasprofservice/index.html" rel="prev">
+        <span class="case-pager__label">← Предыдущий кейс</span>
+        <span class="case-pager__title">GasProfService</span>
+      </a>
+    <a class="case-pager__link case-pager__link--home" href="../../index.html">
+      <span class="case-pager__label">Портфолио</span>
+      <span class="case-pager__title">На главную</span>
+    </a>
+    <a class="case-pager__link case-pager__link--next" href="../../cases/reestr-719/index.html" rel="next">
+        <span class="case-pager__label">Следующий кейс →</span>
+        <span class="case-pager__title">Эксперт 719+</span>
+      </a>
+  </nav>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://timurpanin.ru/","url":"https://timurpanin.ru/"},{"@type":"ListItem","position":2,"name":"Кейсы","item":"https://timurpanin.ru/cases/","url":"https://timurpanin.ru/cases/"},{"@type":"ListItem","position":3,"name":"Talisman Online","item":"https://timurpanin.ru/cases/talisman-online/","url":"https://timurpanin.ru/cases/talisman-online/"}]}</script><dialog class="evidence-viewer" id="evidence-viewer" aria-label="Скриншот">
+    <button class="evidence-viewer__close" type="button" data-close>Закрыть</button>
+    <img alt="">
+    <p></p>
+  </dialog>
+  <script src="../../js/case.js" defer></script>
+    </main>
+    <footer class="site-footer">
+      <div class="site-footer__inner container">
+        <div>
+          <p class="site-footer__name">Тимур Панин</p>
+          <p class="site-footer__description">Портфолио SEO-специалиста</p>
+        </div>
+        <nav aria-label="Навигация в подвале">
+          <ul>
+            <li><a href="../../cases/index.html">Кейсы</a></li><li><a href="../../about/index.html">Обо мне</a></li><li><a href="../../contact/index.html">Контакты</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>
