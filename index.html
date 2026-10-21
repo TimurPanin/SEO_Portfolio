@@ -3,8 +3,10 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#22262B">
     <meta name="yandex-verification" content="5b8d33e33896ab7d">
     <link rel="preload" href="fonts/golos-text-cyrillic-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/oswald-cyrillic-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/golos-text-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="icon" href="favicon.ico" sizes="any">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
@@ -69,14 +71,26 @@
     <main id="main" class="container">
       
   <section class="home-hero" aria-labelledby="home-title">
-    <div class="home-hero__copy">
+    <div class="home-hero__copy paper">
+      <p class="file-head" aria-hidden="true"><span>Личное дело № 001</span></p>
       <p class="home-eyebrow">Тимур Панин · SEO-специалист</p>
       <h1 id="home-title">Технические SEO-аудиты с ручной проверкой</h1>
-      <p class="home-hero__intro">Нахожу проблемы сайта и проверяю каждую вручную - по коду ответа, HTML и DOM. Ищу стажировку в SEO.</p>
+      <dl class="file-fields">
+        <div><dt>Специализация</dt><dd>техническое SEO</dd></div>
+        <div><dt>Метод</dt><dd>ручная проверка: код ответа, HTML, DOM</dd></div>
+        <div><dt>Открыт к</dt><dd>новым проектам и стажировке в SEO</dd></div>
+        <div><dt>Изучает</dt><dd>семантику и кластеризацию</dd></div>
+      </dl>
+      <p class="home-hero__intro">Нахожу проблемы сайта и проверяю каждую вручную - по коду ответа, HTML и DOM. Беру сайты на технический аудит и ищу стажировку в SEO.</p>
       <div class="home-actions">
         <a class="button button--primary" href="/cases/">Смотреть кейсы</a>
         <a class="button button--secondary" href="/about/">Обо мне</a>
       </div>
+      <p class="stamp home-hero__stamp">Открыт <br>к новым проектам</p>
+    </div>
+    <div class="home-hero__side">
+      <div class="home-tools-note">
+      <p class="note-title" aria-hidden="true">Инструменты</p>
       <ul class="home-tools" aria-label="Инструменты">
         <li>Screaming Frog</li>
         <li>SiteAnalyzer</li>
@@ -84,8 +98,13 @@
         <li>curl</li>
         <li>Key Collector</li>
         <li>Вордстат</li>
+        <li>Clayler SEO</li>
       </ul>
-    </div>
+      </div>
+    <a class="home-hero__program" href="#clayler-title">
+      <img src="images/clayler-seo.webp" alt="" width="1200" height="441" decoding="async">
+      <span>Своя программа Clayler SEO ↓</span>
+    </a>
     <div class="home-hero__visual">
       <p class="home-hero__visual-title">От сигнала к проверенному выводу</p>
       <div class="home-hero__visual-grid">
@@ -102,6 +121,7 @@
           <p>Отдельно от статуса внедрения.</p>
         </div>
       </div>
+    </div>
     </div>
   </section>
 
@@ -141,7 +161,9 @@
       <p>Независимые SEO-аудиты с ручной перепроверкой технических проблем и оптимизации страниц.</p>
     </div>
     <div class="case-grid">
-      <article class="case-card card case-card--image" style="--case-card-image: url(&quot;../images/cases/gasprofservice-home.webp&quot;)">
+      <article class="case-card">
+  <p class="case-card__tab" aria-hidden="true">Дело № 01</p>
+  <div class="case-card__photo"><img src="images/cases/gasprofservice-home.webp" alt="Главная страница gasprofservice.ru на дату аудита" width="1600" height="767" loading="lazy" decoding="async"></div>
   <div class="case-card__labels">
       <span class="badge">Техническое SEO</span>
       <span class="badge">Образец работы</span>
@@ -160,7 +182,9 @@
   <div class="case-card__actions">
     <a class="case-card__link" href="/cases/gasprofservice/">Смотреть кейс: GasProfService <span aria-hidden="true">→</span></a>
   </div>
-</article><article class="case-card card case-card--image" style="--case-card-image: url(&quot;../images/cases/talisman-online-home.webp&quot;)">
+</article><article class="case-card">
+  <p class="case-card__tab" aria-hidden="true">Дело № 02</p>
+  <div class="case-card__photo"><img src="images/cases/talisman-online-home.webp" alt="Главная страница Talisman Online на дату аудита" width="1600" height="590" loading="lazy" decoding="async"></div>
   <div class="case-card__labels">
       <span class="badge">Техническое SEO</span>
       <span class="badge">Образец работы</span>
@@ -179,7 +203,9 @@
   <div class="case-card__actions">
     <a class="case-card__link" href="/cases/talisman-online/">Смотреть кейс: Talisman Online <span aria-hidden="true">→</span></a>
   </div>
-</article><article class="case-card card case-card--image" style="--case-card-image: url(&quot;../images/cases/reestr-719-home.webp&quot;)">
+</article><article class="case-card">
+  <p class="case-card__tab" aria-hidden="true">Дело № 03</p>
+  <div class="case-card__photo"><img src="images/cases/reestr-719-home.webp" alt="Главная страница reestr-719.ru на дату аудита" width="1600" height="690" loading="lazy" decoding="async"></div>
   <div class="case-card__labels">
       <span class="badge">Техническое SEO</span>
       <span class="badge">Образец работы</span>
@@ -202,12 +228,37 @@
     </div>
   </section>
 
+  <section class="home-section" aria-labelledby="clayler-title">
+    <div class="home-section__heading">
+      <p class="home-eyebrow">Своя разработка</p>
+      <h2 id="clayler-title">Программа Clayler SEO</h2>
+      <p>Параллельно с аудитами пишу собственную программу для технического аудита сайтов.</p>
+    </div>
+    <div class="program">
+      <figure class="program__photo">
+        <img src="images/clayler-seo.webp" alt="Окно программы Clayler SEO: запуск новой проверки сайта" width="1200" height="441" loading="lazy" decoding="async">
+        <figcaption>Clayler SEO: запуск новой проверки</figcaption>
+      </figure>
+      <div class="program__card paper">
+        <p class="program__title">Что умеет</p>
+        <ul class="check-list">
+          <li>Обходит сайт и находит технические ошибки</li>
+          <li>Сравнивает проверки между собой и сайт с конкурентами</li>
+          <li>Собирает и группирует запросы для семантики</li>
+          <li>Берёт данные из Яндекс Вебмастера, Метрики и Google Search Console</li>
+          <li>Готовит отчёт в HTML и Excel</li>
+        </ul>
+        <p class="program__note">Программа для Windows, написана на Python, без нейросетей. Не продаётся и не выложена в открытый доступ.</p>
+      </div>
+    </div>
+  </section>
+
   <section class="home-section" aria-labelledby="process-title">
     <div class="home-section__heading">
       <p class="home-eyebrow">Методика</p>
       <h2 id="process-title">Как я работаю</h2>
     </div>
-    <ol class="process-grid">
+    <ol class="process-grid paper">
       <li class="process-step">
         <span class="process-step__number" aria-hidden="true">01</span>
         <h3>Найти сигнал</h3>
@@ -231,7 +282,10 @@
       <h2 id="final-cta-title">Посмотреть технические SEO-аудиты</h2>
       <p>В кейсах подробно показаны методика проверки, подтверждённые находки, контрольные проверки и ограничения.</p>
     </div>
-    <a class="button button--primary" href="/cases/">Перейти к кейсам</a>
+    <div class="home-final-cta__actions">
+      <a class="button button--primary" href="/cases/">Перейти к кейсам</a>
+      <a class="button button--secondary" href="https://t.me/OBB1k" target="_blank" rel="noopener noreferrer">Telegram @OBB1k</a>
+    </div>
   </section>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"SEO-портфолио Тимура Панина","url":"https://timurpanin.ru/"}</script>
     </main>
