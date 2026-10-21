@@ -1641,6 +1641,8 @@ main {
 .case-toc {
   position: sticky;
   top: 1.5rem;
+  max-height: calc(100vh - 3rem);
+  overflow-y: auto;
   padding: 1.4rem 1.3rem;
   background: var(--note);
   box-shadow: var(--shadow-card);
@@ -1817,30 +1819,71 @@ main {
   counter-reset: step;
 }
 
-.case-steps li {
-  counter-increment: step;
-  display: grid;
-  grid-template-columns: 2.25rem minmax(0, 1fr);
-  gap: 1rem;
-  margin: 0 !important;
-  padding: 0.9rem 0;
-  border-top: 1px solid rgb(30 30 30 / 30%);
+.case-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
-.case-steps li:last-child {
-  border-bottom: 1px solid rgb(30 30 30 / 30%);
+/* каждая рекомендация: карточка с номером-штампом */
+.case-steps li {
+  counter-increment: step;
+  position: relative;
+  margin: 0 !important;
+  padding: 1rem 1.25rem 1rem 4rem;
+  background: var(--paper-white);
+  border: 1px solid rgb(30 30 30 / 15%);
+  box-shadow: 0 3px 8px rgb(0 0 0 / 8%);
+  line-height: 1.55;
 }
 
 .case-steps li::before {
   content: counter(step);
+  position: absolute;
+  top: 0.95rem;
+  left: 1.1rem;
+  width: 1.9rem;
+  height: 1.9rem;
+  border: 2px solid var(--red);
   color: var(--red);
   font-family: var(--font-display);
-  font-size: 1.5rem;
-  line-height: 1.2;
+  font-size: 1.05rem;
+  line-height: 1.7rem;
+  text-align: center;
+  transform: rotate(-4deg);
 }
 
-.case-steps li > * {
-  grid-column: 2;
+.case-steps li strong {
+  display: block;
+  margin-bottom: 0.15rem;
+}
+
+/* находки: красная полоса слева, как закладка */
+.case-article h3 {
+  padding: 0.7rem 0 0.7rem 1rem;
+  border-left: 4px solid var(--red);
+  background: rgb(30 30 30 / 4%);
+}
+
+/* «Ограничения» и «Статус работы»: выделенные блоки */
+.case-article :is(#ограничения, #статус-работы) + p {
+  padding: 1.25rem 1.5rem;
+  line-height: 1.65;
+}
+
+.case-article #ограничения + p {
+  background: var(--desk-raised);
+  color: var(--on-desk);
+  border-left: 4px solid var(--on-desk-accent);
+}
+
+.case-article #ограничения + p code {
+  background: rgb(255 255 255 / 10%);
+}
+
+.case-article #статус-работы + p {
+  border: 2px dashed rgb(179 38 30 / 55%);
+  background: rgb(255 255 255 / 45%);
 }
 
 /* Навигация между кейсами */
