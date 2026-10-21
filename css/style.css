@@ -1669,15 +1669,18 @@ main {
   counter-increment: toc;
 }
 
+/* номер слева, текст справа: перенос строки идёт под текстом, а не под номером */
 .case-toc a {
-  display: block;
+  display: grid;
+  grid-template-columns: 4.1em minmax(0, 1fr);
   padding: 0.35rem 0;
   text-decoration: none;
 }
 
 .case-toc a::before {
-  content: "л. " counter(toc) " · ";
+  content: "л. " counter(toc) " ·";
   color: var(--ink-soft);
+  white-space: nowrap;
 }
 
 .case-toc a[aria-current] {
