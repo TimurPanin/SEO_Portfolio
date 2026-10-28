@@ -1433,6 +1433,12 @@ main {
   margin-right: 0.5rem;
 }
 
+/* над списком кейсов и контактами - без второго отступа сверху: расстояние как на странице кейса */
+.breadcrumbs + .cases-hero,
+.breadcrumbs + .secondary-page {
+  padding-top: 0;
+}
+
 .case-hero {
   position: relative;
   display: grid;
