@@ -1557,6 +1557,16 @@ main {
   transform: rotate(-7deg);
 }
 
+/* Страница программы: снимок окна крупнее, чем фото сайта в кейсе */
+.case-hero--program {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+}
+
+.case-hero--program .case-hero__photo img {
+  max-height: none;
+  object-fit: contain;
+}
+
 /* Коротко: опись улик */
 .case-summary {
   display: flex;
@@ -1996,6 +2006,10 @@ main {
 /* ---------- Планшеты и телефоны ---------- */
 
 @media (max-width: 62rem) {
+  .case-hero--program {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
   .case-hero {
     grid-template-columns: minmax(0, 1fr);
     grid-template-areas:
