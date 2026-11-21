@@ -679,7 +679,8 @@ main {
   transform: rotate(-0.6deg);
 }
 
-.program__photo img {
+.program__photo img,
+.program__photo video {
   display: block;
   width: 100%;
   height: auto;
