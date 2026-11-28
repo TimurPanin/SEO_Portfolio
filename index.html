@@ -42,13 +42,13 @@
     ym(113429856, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
 </script>
 <style>
-.detective-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,0.65fr);align-items:center;gap:.5rem}
+.detective-hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);align-items:center;gap:.65rem}
 .home-hero__copy .detective-hero h1{font-size:clamp(2rem,4vw,3.8rem);max-width:15ch;overflow-wrap:normal}
-.detective-hero__mascot{display:block;width:100%;height:auto;max-width:18rem;justify-self:center}
-.detective-note{display:flex;align-items:center;gap:.75rem;margin-top:.75rem;color:#efe9d9}
-.detective-note img{width:5rem;height:5rem;flex:none}
-.detective-note p{margin:0;font-size:.95rem}
-@media(max-width:48rem){.detective-hero{grid-template-columns:1fr}.home-hero__copy .detective-hero h1{font-size:clamp(2.4rem,7vw,3.8rem)}.detective-hero__mascot{max-width:12rem;justify-self:end}}
+.detective-hero__mascot{display:block;width:100%;height:auto;max-width:22rem;justify-self:center}
+.detective-note{display:flex;align-items:center;gap:1rem;margin:1rem 0;color:#efe9d9;max-width:100%}
+.detective-note img{width:clamp(5rem,12vw,9rem);height:auto;flex:none}
+.detective-note p{position:relative;margin:0;padding:1rem 1.25rem;background:#efe9d9;color:#242424;border:1px solid #c8bda5;box-shadow:3px 4px 0 #0003;transform:rotate(-1deg);font-size:.95rem;overflow-wrap:anywhere}
+@media(max-width:48rem){.detective-hero{grid-template-columns:minmax(0,1fr);gap:.5rem}.home-hero__copy .detective-hero h1{font-size:clamp(1.75rem,7.5vw,3rem);max-width:100%;overflow-wrap:break-word}.detective-hero__mascot{width:65%;max-width:13rem;justify-self:center}.detective-note{gap:.65rem}.detective-note img{width:4.5rem}.detective-note p{padding:.65rem .8rem;transform:none;font-size:.875rem}}
 @media print{.detective-hero__mascot,.detective-note{display:none}.detective-hero{display:block}}
 </style>
 </head>
